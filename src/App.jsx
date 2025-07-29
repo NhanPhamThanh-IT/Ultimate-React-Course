@@ -6,11 +6,20 @@ import reactLogo from './assets/react.svg';
 const App = () => {
   const name = 'React';
 
+  const addNewTodo = (name) => {
+    alert(`New todo added: ${name}`);
+  }
+
   return (
     <div className="todo-container">
       <div className="todo-title">Todo List</div>
-      <TodoNew />
-      <TodoData name={name} age={18} />
+      <TodoNew
+        addNewTodo={addNewTodo}
+      />
+      <TodoData
+        name={name}
+        age={18}
+      />
       <div className="todo-image">
         <img src={reactLogo} alt="React logo" className="logo" />
       </div>
