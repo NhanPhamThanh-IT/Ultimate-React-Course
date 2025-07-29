@@ -25,9 +25,6 @@ const TodoNew = (props) => {
             >
                 Add
             </button>
-            <div>
-                My test input is: {valueInput}
-            </div>
         </div>
     );
 }

@@ -11,8 +11,16 @@ const App = () => {
     { id: 3, name: 'Build a Todo App' }
   ]);
 
-  const addNewTodo = (name) => {
-    alert(`New todo added: ${name}`);
+  const addNewTodo = (input) => {
+    if (input.trim() === '') {
+      alert('Please enter a valid todo item.');
+      return;
+    }
+    const newTodo = {
+      id: todoList.length + 1,
+      name: input
+    };
+    setTodoList([...todoList, newTodo]);
   }
 
   return (
