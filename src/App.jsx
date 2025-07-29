@@ -1,10 +1,15 @@
+import { useState } from 'react';
 import './components/todo/todo.css';
 import TodoData from './components/todo/TodoData';
 import TodoNew from './components/todo/TodoNew';
 import reactLogo from './assets/react.svg';
 
 const App = () => {
-  const name = 'React';
+  const [todoList, setTodoList] = useState([
+    { id: 1, name: 'Learn React' },
+    { id: 2, name: 'Watch YouTube' },
+    { id: 3, name: 'Build a Todo App' }
+  ]);
 
   const addNewTodo = (name) => {
     alert(`New todo added: ${name}`);
@@ -17,8 +22,7 @@ const App = () => {
         addNewTodo={addNewTodo}
       />
       <TodoData
-        name={name}
-        age={18}
+        todoList={todoList}
       />
       <div className="todo-image">
         <img src={reactLogo} alt="React logo" className="logo" />

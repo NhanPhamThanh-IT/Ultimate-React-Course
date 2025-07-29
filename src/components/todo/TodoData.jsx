@@ -1,10 +1,12 @@
 const TodoData = (props) => {
-    const { name } = props;
+    const { todoList } = props;
     return (
         <div className="todo-data">
-            <div className="todo-name">Hello, {name}!</div>
-            <div>Learning React</div>
-            <div>Watching Youtube</div>
+            <div>
+                {todoList.map((todo) => (
+                    <p key={todo.id}>{todo.name}</p>
+                ))}
+            </div>
         </div>
     );
 }
